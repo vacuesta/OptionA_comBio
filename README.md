@@ -14,4 +14,9 @@ Main Application Parameters:
   
 Importing
   Open the Terminal or a Command session:
+  git clone https://github.com/vacuesta/OptionA_comBio.git
   
+  
+Script:
+wrapper.py
+  Contains all the functions that will be ran sequentially in accordance to the miniproject assignment. There is intensive documentation within the script. It starts with creating a directory then changing into that directory. A wget download will occur taking in a .sra from ncbi. It will go by fastq dump that .sra file in order to get the .fastq file. Then it will run spades for the assembly of the ecoli. After running spades there are subsequent steps that need to occur in the functions in the file that will see the contigs that are greater than 1000 then to concatenate all those together to see the longest sequence. That file will then be put into prokka for annotation. After annotation. The CDS and tRNA will then be compared. Since the amount is given in the miniproject doc, those variables are already declared and it is compared to the annotated file with the CDS and tRNA. After that bowtie2 is ran, following those 2 commands will be tophat to map the reads, then cufflinks will produce the .fpkm file. That final file will go through a parse into a csv with specific headings that are listed.
